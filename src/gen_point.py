@@ -167,44 +167,36 @@ def main():
     random_points = generate_random_points(50, (0, 100), (0, 100))
     print(f"生成了 {len(random_points)} 个随机点")
     plot_points(random_points, "随机点集")
-    save_points_to_csv(random_points, "random_points.csv")
-    # Deleted: save_points_to_yaml_simple(random_points, "random_points.yaml")
     
     # 2. 网格点集
     print("\n2. 生成网格点集 (3x4网格)...")
-    grid_points = generate_grid_points(30, 40, 4.0)
+    grid_points = generate_grid_points(10, 10, 2.0)
     print(f"生成了 {len(grid_points)} 个网格点")
     plot_points(grid_points, "网格点集")
-    save_points_to_csv(grid_points, "grid_points.csv")
-    # Deleted: save_points_to_yaml_simple(grid_points, "grid_points.yaml")
     
     # 3. 圆形点集
     print("\n3. 生成圆形点集 (8个点)...")
     circular_points = generate_circular_points(80, 50.0, (0, 0))
     print(f"生成了 {len(circular_points)} 个圆形排列点")
     plot_points(circular_points, "圆形点集")
-    save_points_to_csv(circular_points, "circular_points.csv")
-    # Deleted: save_points_to_yaml_simple(circular_points, "circular_points.yaml")
     
     # 4. 聚簇点集
     print("\n4. 生成聚簇点集 (15个点, 3个聚簇)...")
     clustered_points = generate_clustered_points(150, 6, 10.00, (0, 100))
     print(f"生成了 {len(clustered_points)} 个聚簇点")
     plot_points(clustered_points, "聚簇点集")
-    save_points_to_csv(clustered_points, "clustered_points.csv")
-    # Deleted: save_points_to_yaml_simple(clustered_points, "clustered_points.yaml")
-    
-    print("\n所有点集已保存到文件中:")
-    print("- random_points.csv")
-    print("- grid_points.csv")
-    print("- circular_points.csv")
-    print("- clustered_points.csv")
-    
+
+    # 保存点集
+    # save_points_to_csv(random_points, "random_points.csv")
+    save_points_to_csv(grid_points, "grid_points.csv")
+    # save_points_to_csv(circular_points, "circular_points.csv")
+    # save_points_to_csv(clustered_points, "clustered_points.csv")
+
     # 演示如何加载CSV文件
-    print("\n示例: 从CSV文件加载点集")
-    loaded_points = load_points_from_file("random_points.csv")
-    print(f"从random_points.txt加载了 {len(loaded_points)} 个点")
-    print("加载的点:", loaded_points)
+    # print("\n示例: 从CSV文件加载点集")
+    # loaded_points = load_points_from_file("random_points.csv")
+    # print(f"从random_points.txt加载了 {len(loaded_points)} 个点")
+    # print("加载的点:", loaded_points)
 
 if __name__ == "__main__":
     main()
